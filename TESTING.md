@@ -31,3 +31,9 @@ Not re-verified on a physical iPhone. Audio requires a user tap to start; the pa
 - Per-voice clef chosen among treble, bass, treble+8, bass-8 by minimizing ledger lines (ottava clefs write the part an octave shifted); verified treble+8 draws its 8 above the clef.
 - Measure-level accidental state machine avoids redundant accidentals; %%stretchlast fills the staff width.
 - Voice colors applied via abcjs classes; muted voices gray. Score re-renders on cell edits, mute, and adding derived voices (6 staves after add). No console errors.
+
+2026-10-17 (rhythmic resultant patterns): Chromium via local HTTP server.
+
+- analyze() now extracts accent skeletons instead of a pitch per step: per-step salience = simultaneous attacks + beat weighting; 高音線/低音線 keep local pitch peaks/dips (capped at 9), 連貫線/交錯線 use the 7 most salient steps; note lengths extend to the next selected step (capped at a quarter).
+- Verified candidates carry 7–9 notes with rests between (previously 16/16); scoring now weighs continuity, accents, and density around 7 notes.
+- Audition, add (derived voice shows sustains and renders as a 6th staff), and full playback all work with no console errors.
