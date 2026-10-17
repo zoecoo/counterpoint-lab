@@ -50,3 +50,10 @@ Not re-verified on a physical iPhone. Audio requires a user tap to start; the pa
 - Score voice names show the same name + range text, styled via CSS to system-ui 11px gray matching the matrix labels.
 - Mute during playback verified: the button toggles in place (no DOM rebuild), the row dims, audio filtering applies per step, and playback continues.
 - No console errors.
+
+2026-10-18 (range bars, lookahead sync, uniform clicks, continuous note bars): Chromium via local HTTP server.
+
+- Voice labels show a horizontal range bar (voice min–max positioned within the global pitch span, tooltip with note names); verified distinct positions per octave layer and updates on mode change.
+- Playback rescheduled on the AudioContext clock with 120ms lookahead; beat highlight and phase re-engraves fire at the scheduled audio time. Measured step intervals 134–137ms against a 134ms target at 112 BPM (was drifting with setTimeout pacing).
+- Uniform cell interaction verified: clicking an attack or sustain cell silences it (mid-bar click truncates), clicking the cell right after a bar re-extends it (cap 4), other empty cells create a note; hidden notes reveal on first click in build mode.
+- Notes render as continuous bars (rounded ends, gap-filling connectors at both grid gaps); computed styles verified. No console errors.
