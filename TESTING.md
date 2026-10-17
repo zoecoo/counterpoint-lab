@@ -18,3 +18,9 @@ Not re-verified on a physical iPhone. Audio requires a user tap to start; the pa
 - Score panel renders per-voice SVG staves (clef by average pitch, accidentals, ledger lines, flags by duration) and updates on edits; scrolls inside its own container with no page overflow at 375px.
 - MIDI re-validated (MThd length 6, format 1, 480 PPQ, exact chunk sizes); durations clipped to the next note start per voice.
 - No JavaScript console errors.
+
+2026-10-17 (notation readability): Chromium via local HTTP server.
+
+- Clef is now chosen per voice to minimize ledger lines (treble, bass, or clef-8 ottava variants); verified a 5-voice render assigning 𝄢 to the low-octave voices and an 8-marked clef to a high voice.
+- Row heights are computed from each voice's actual pitch extent; verified zero noteheads crossing into a neighboring voice's region (previously rows overlapped).
+- Ledger lines reduced to ~0.7 per note on a representative render and drawn at 60% opacity.
