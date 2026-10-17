@@ -129,3 +129,8 @@ Not re-verified on a physical iPhone. Audio requires a user tap to start; the pa
 
 - Replaced the modal pitch/repaint click rules with a piano-roll panel (rows = pitches across ~4 octaves with tonic rows highlighted, columns = 16 steps, target selector for the motif or any voice, single length selector). Verified: clicking another row in an occupied column replaces the pitch in one action (matrix name updates, canon rebuilds in sync), clicking a note head deletes, a quarter placed at the bar edge clips correctly, and voice view renders the voice's notes.
 - Matrix voice rows are now pure material toggles (silence/truncate/restore-from-pool); the motif matrix row is read-only and clicking it switches the editor target. No page overflow at 375px (the roll scrolls internally); no console errors.
+
+2026-10-18 (pitch-picker popover replaces the piano roll): Chromium via local HTTP server.
+
+- Clicking any motif cell opens an anchored popover with 音名 × 八度 × 音長 button rows plus 休止/完成; selections apply immediately (verified D4→C4→C5 with the panel staying open and the canon rebuilding), 休止 removes and closes, an empty cell creates the note on the first press, Escape/outside clicks close it.
+- Voice cells without pool material open the same picker to add a custom note (verified E4 added and the range label updating); bar toggles close the picker. No console errors.
