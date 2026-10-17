@@ -37,3 +37,9 @@ Not re-verified on a physical iPhone. Audio requires a user tap to start; the pa
 - analyze() now extracts accent skeletons instead of a pitch per step: per-step salience = simultaneous attacks + beat weighting; 高音線/低音線 keep local pitch peaks/dips (capped at 9), 連貫線/交錯線 use the 7 most salient steps; note lengths extend to the next selected step (capped at a quarter).
 - Verified candidates carry 7–9 notes with rests between (previously 16/16); scoring now weighs continuity, accents, and density around 7 notes.
 - Audition, add (derived voice shows sustains and renders as a 6th staff), and full playback all work with no console errors.
+
+2026-10-17 (matrix click responsiveness + phase-aware score): Chromium via local HTTP server.
+
+- Matrix DOM is now rebuilt only on structural changes; cell clicks, beat highlights, and build-phase reveals update classes on cached elements (verified the clicked element survives, handler returns in <1ms). Score re-engraving is debounced 250ms off the click path. touch-action:manipulation and user-select:none added for mobile taps.
+- Score now follows the build phase: 10 notes rendered at 建構階段 2 vs 40 with 逐步加入 off, and it grew from 11 to 16 notes during playback as the phase advanced (re-engraved once per phase change, scheduled off the audio loop).
+- Mute label toggles, voice removal, candidate analysis, and staff count after removal all verified; no console errors.
