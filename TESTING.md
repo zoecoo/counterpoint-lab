@@ -80,3 +80,8 @@ Not re-verified on a physical iPhone. Audio requires a user tap to start; the pa
 2026-10-18 (ghost preview of unrevealed notes): Chromium via local HTTP server.
 
 - In build mode, clicking an apparently empty cell could reveal a hidden note of arbitrary length (quarter/eighth/sixteenth), which felt random. Unrevealed notes now render as faint ghost bars (opacity .18) so the length is visible before clicking; clicking a ghost reveals it in place, and truly empty cells still create a single sixteenth. Ghosts disappear when 逐步加入 is off. No console errors.
+
+2026-10-18 (auditory-streaming candidates, 16-voice slider): Chromium via local HTTP server.
+
+- Resultant analysis rewritten around auditory stream segregation: three streams anchored at the 85th/50th/15th pitch percentiles accept only notes within ±6 semitones of a slowly-moving focus (rests where the band is empty), plus an accent line from multi-voice simultaneous attacks. Verified candidate spans of 7–9 semitones (previously extreme lines spanned several octaves); scoring now weighs interval smoothness, register compactness, and density.
+- 起始聲部數 slider max raised to 16; 16 canon voices render in the matrix and play within the existing caps. No console errors.
