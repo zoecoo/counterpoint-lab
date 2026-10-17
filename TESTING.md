@@ -114,3 +114,8 @@ Not re-verified on a physical iPhone. Audio requires a user tap to start; the pa
 2026-10-18 (pitch input): Chromium via local HTTP server.
 
 - An 輸入音高 selector (22 scale degrees, G2–A6 under pentatonic major, tonic default) sets the pitch used when clicking an empty cell; verified a selected A4 lands in a custom voice (range label A4–A4), and mode changes relabel the options while preserving the selected degree. No console errors.
+
+2026-10-18 (editable motif row + overlap-safe mutations): Chromium via local HTTP server.
+
+- A 母題 row above the voices edits the shared source melody with the same click model and pitch selector; verified removing/adding motif notes immediately rebuilds all canon voices in sync (note counts follow the motif) while the staggered-entry dimming skips the motif row.
+- Micro-variation now rejects revive/move targets covered by another note's sustain and clips revived/moved lengths to the free space; a 9-second 50%-probability mutation fuzz at 180 BPM produced zero orphan bar fragments (previously overlapping notes drew broken slivers).
