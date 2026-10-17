@@ -61,3 +61,9 @@ Not re-verified on a physical iPhone. Audio requires a user tap to start; the pa
 2026-10-18 (stacked score voice names): Chromium via local HTTP server.
 
 - Score voice names now render on two lines (name, then range in 9.5px gray) via a post-render tspan, so abcjs reserves margin for the short name only (~37px vs the previous full-width string). Muted marker moves to the range line and clears on unmute. Verified visually via SVG→PNG capture; no console errors.
+
+2026-10-18 (rounded beat ring, add-voice button, staggered entry): Chromium via local HTTP server.
+
+- Beat highlight redrawn as an ::after ring (2px solid, 8px radius) so all four corners are rounded regardless of the cell's own bar-shape radii.
+- ＋ 新增聲部 button below the matrix appends an empty editable 自訂 voice (derived-flagged so slider rebuilds keep it); verified immediate cell editing and the 16-voice cap path.
+- 每 N 小節加入一個聲部 slider (0=同時) gates voices by bar during playback with waiting rows dimmed: with N=1 and 6 voices, 5 rows waited at start, 3 after two bars, 0 after stop. Loop reset point takes the max of build completion and full entry. No console errors.
