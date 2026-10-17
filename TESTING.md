@@ -106,3 +106,7 @@ Not re-verified on a physical iPhone. Audio requires a user tap to start; the pa
 2026-10-18 (saner tie-splitting): Chromium via local HTTP server.
 
 - Splitting every beat crossing turned ordinary syncopations (e.g. a quarter starting at step 2) into dotted-note-plus-tie clutter with long flat arcs across the multi-voice spacing. Notes now split only at the half-bar: verified a step-2 quarter renders as a single quarter, a step-7 eighth splits into tied sixteenths across the midpoint, and a dotted eighth at 13–15 stays unsplit (ABC totals still 16). Both dense and sparse textures re-validated as well-formed ABC. No console errors.
+
+2026-10-18 (material-voice button): Chromium via local HTTP server.
+
+- ＋ 新增素材聲部 appends a voice built from the motif at the next canon shift index (verified 素材 1 at shift 10 with the same note count as canon voices, complementary subset applied when 變化 is on); the original button is renamed ＋ 新增自訂聲部 and still adds an empty voice. Both survive canon rebuilds. No console errors.
