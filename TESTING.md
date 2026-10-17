@@ -72,3 +72,7 @@ Not re-verified on a physical iPhone. Audio requires a user tap to start; the pa
 
 - Since notes gained lengths, the reveal order was shuffled over all 16 slots, so the first revealed slots could all be rests — every voice then stayed silent (and blank in the matrix) for several bars, which read as "no sound at all", especially with a long voice-entry interval. The reveal order now shuffles note slots first, so the initial build phase always exposes two sounding notes per voice.
 - Verified across 10 regenerations: every voice shows exactly 2 note starts at the initial phase; playback produces sound and step highlights immediately. No console errors.
+
+2026-10-18 (unison merging): Chromium via local HTTP server.
+
+- Overlapping same-pitch notes across voices now merge at the scheduler: a note fully covered by an already-sounding unison is skipped, and a longer one continues seamlessly from the earlier note's end instead of re-attacking. Reproduced the reported case (len-2 note in one voice, same pitch len-1 in another, same start): one bar of playback created 2 oscillators (one tone) instead of 4. No console errors.
