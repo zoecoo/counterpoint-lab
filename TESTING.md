@@ -134,3 +134,7 @@ Not re-verified on a physical iPhone. Audio requires a user tap to start; the pa
 
 - Clicking any motif cell opens an anchored popover with 音名 × 八度 × 音長 button rows plus 休止/完成; selections apply immediately (verified D4→C4→C5 with the panel staying open and the canon rebuilding), 休止 removes and closes, an empty cell creates the note on the first press, Escape/outside clicks close it.
 - Voice cells without pool material open the same picker to add a custom note (verified E4 added and the range label updating); bar toggles close the picker. No console errors.
+
+2026-10-18 (fix: freeze when editing small motifs with 變化 on): Chromium via local HTTP server.
+
+- subsetOf required at least 2 kept notes, so a motif edited down to 1 note (or 0) spun its fill loop forever — the page froze the moment the picker edit triggered buildCanon with variation enabled. The minimum is now capped at the material size and empty material returns an empty set. Verified deleting every motif note via the picker with 變化 on keeps the page responsive, and a note can be added back from an empty motif.
