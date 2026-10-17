@@ -138,3 +138,8 @@ Not re-verified on a physical iPhone. Audio requires a user tap to start; the pa
 2026-10-18 (fix: freeze when editing small motifs with 變化 on): Chromium via local HTTP server.
 
 - subsetOf required at least 2 kept notes, so a motif edited down to 1 note (or 0) spun its fill loop forever — the page froze the moment the picker edit triggered buildCanon with variation enabled. The minimum is now capped at the material size and empty material returns an empty set. Verified deleting every motif note via the picker with 變化 on keeps the page responsive, and a note can be added back from an empty motif.
+
+2026-10-18 (full audit, accidentals, build stamp): Chromium via local HTTP server.
+
+- Full-script review of every loop plus a 198-action random fuzz (tonic presses on all 16 motif cells with 變化 on, random root/mode/slider/picker/voice actions) produced zero errors and no freeze — the previously reported tonic-press freeze does not reproduce on the fixed build; the deployed page was verified to contain the subsetOf fix, pointing to browser cache on the reporting device. A build stamp now shows in the page header for version confirmation.
+- Accidentals: cells gain an acc field (♭/♮/♯ row in the picker); verified E4→F4 (sharp, enharmonic spelling), E♭4 (flat), E4 (natural), degree-plus-alteration preserved across mode changes, canon rebuild carrying acc through pools, subsets, mutations, candidates, audio, and MIDI (cellMidi includes acc). Playback regression passed; no console errors.
