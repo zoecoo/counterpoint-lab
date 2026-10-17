@@ -89,3 +89,7 @@ Not re-verified on a physical iPhone. Audio requires a user tap to start; the pa
 2026-10-18 (conventional ties): Chromium via local HTTP server.
 
 - Notes crossing a beat boundary are now split at the boundary and tied (ABC "-"), per engraving convention; previously each note was emitted as a single duration so ties never appeared (lengths cap at a quarter and never cross the barline). Verified a len-2 note starting at step 3 renders tied, and generated textures show ties throughout; visual check via SVG→PNG. No console errors.
+
+2026-10-18 (two-column layout): Chromium via local HTTP server.
+
+- At ≥1000px the scale/mode and playback panels sit in a 350px sticky right column (scrollable if taller than the viewport) with matrix/score/composer on the left (864px content at 1280px viewport, no horizontal overflow); below 1000px the layout stacks in the original single-column order. All control ids remain reachable; no console errors.
