@@ -124,3 +124,8 @@ Not re-verified on a physical iPhone. Audio requires a user tap to start; the pa
 
 - The adjacent-cell auto-extend made separate adjacent notes impossible; empty-cell clicks now place an independent note using the 輸入音高 and new 音長 selectors (sixteenth/eighth/dotted-eighth/quarter, clipped to free space). Verified two adjacent solos and a quarter placed mid-row.
 - Motif bars display note names; clicking a bar start repaints it to the selected pitch (rhythm kept, canon rebuilds — verified C4→D5 with class unchanged) and deletes only when the pitch matches. The same repaint-or-delete rule applies to voice rows, preserving each voice's octave. No console errors.
+
+2026-10-18 (piano-roll melody editor): Chromium via local HTTP server.
+
+- Replaced the modal pitch/repaint click rules with a piano-roll panel (rows = pitches across ~4 octaves with tonic rows highlighted, columns = 16 steps, target selector for the motif or any voice, single length selector). Verified: clicking another row in an occupied column replaces the pitch in one action (matrix name updates, canon rebuilds in sync), clicking a note head deletes, a quarter placed at the bar edge clips correctly, and voice view renders the voice's notes.
+- Matrix voice rows are now pure material toggles (silence/truncate/restore-from-pool); the motif matrix row is read-only and clicking it switches the editor target. No page overflow at 375px (the roll scrolls internally); no console errors.
