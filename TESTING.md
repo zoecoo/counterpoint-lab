@@ -67,3 +67,8 @@ Not re-verified on a physical iPhone. Audio requires a user tap to start; the pa
 - Beat highlight redrawn as an ::after ring (2px solid, 8px radius) so all four corners are rounded regardless of the cell's own bar-shape radii.
 - ＋ 新增聲部 button below the matrix appends an empty editable 自訂 voice (derived-flagged so slider rebuilds keep it); verified immediate cell editing and the 16-voice cap path.
 - 每 N 小節加入一個聲部 slider (0=同時) gates voices by bar during playback with waiting rows dimmed: with N=1 and 6 voices, 5 rows waited at start, 3 after two bars, 0 after stop. Loop reset point takes the max of build completion and full entry. No console errors.
+
+2026-10-18 (fix: silent build-up starts): Chromium via local HTTP server.
+
+- Since notes gained lengths, the reveal order was shuffled over all 16 slots, so the first revealed slots could all be rests — every voice then stayed silent (and blank in the matrix) for several bars, which read as "no sound at all", especially with a long voice-entry interval. The reveal order now shuffles note slots first, so the initial build phase always exposes two sounding notes per voice.
+- Verified across 10 regenerations: every voice shows exactly 2 note starts at the initial phase; playback produces sound and step highlights immediately. No console errors.
