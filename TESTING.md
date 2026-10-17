@@ -102,3 +102,7 @@ Not re-verified on a physical iPhone. Audio requires a user tap to start; the pa
 
 - 變化 panel with a master 啟用 checkbox (default off = strict canon; verified all voices identical when off and stable through playback). When on: complementary subsets at generation (verified differing per-voice note counts with union coverage of the motif), per-bar micro-variation (verified cell changes during playback with live matrix/score refresh), and every-N-bars subset reconfiguration (verified with N=2).
 - During audition the main play button no longer flips to ■ 停止 (the audition card has its own toggle); clicking the main play button mid-audition switches straight into full playback and resets the audition button. No console errors.
+
+2026-10-18 (saner tie-splitting): Chromium via local HTTP server.
+
+- Splitting every beat crossing turned ordinary syncopations (e.g. a quarter starting at step 2) into dotted-note-plus-tie clutter with long flat arcs across the multi-voice spacing. Notes now split only at the half-bar: verified a step-2 quarter renders as a single quarter, a step-7 eighth splits into tied sixteenths across the midpoint, and a dotted eighth at 13–15 stays unsplit (ABC totals still 16). Both dense and sparse textures re-validated as well-formed ABC. No console errors.
