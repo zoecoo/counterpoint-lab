@@ -110,3 +110,7 @@ Not re-verified on a physical iPhone. Audio requires a user tap to start; the pa
 2026-10-18 (material-voice button): Chromium via local HTTP server.
 
 - ＋ 新增素材聲部 appends a voice built from the motif at the next canon shift index (verified 素材 1 at shift 10 with the same note count as canon voices, complementary subset applied when 變化 is on); the original button is renamed ＋ 新增自訂聲部 and still adds an empty voice. Both survive canon rebuilds. No console errors.
+
+2026-10-18 (pitch input): Chromium via local HTTP server.
+
+- An 輸入音高 selector (22 scale degrees, G2–A6 under pentatonic major, tonic default) sets the pitch used when clicking an empty cell; verified a selected A4 lands in a custom voice (range label A4–A4), and mode changes relabel the options while preserving the selected degree. No console errors.
