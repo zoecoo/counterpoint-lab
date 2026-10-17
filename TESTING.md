@@ -93,3 +93,7 @@ Not re-verified on a physical iPhone. Audio requires a user tap to start; the pa
 2026-10-18 (two-column layout): Chromium via local HTTP server.
 
 - At ≥1000px the scale/mode and playback panels sit in a 350px sticky right column (scrollable if taller than the viewport) with matrix/score/composer on the left (864px content at 1280px viewport, no horizontal overflow); below 1000px the layout stacks in the original single-column order. All control ids remain reachable; no console errors.
+
+2026-10-18 (audition toggle): Chromium via local HTTP server.
+
+- The candidate audition button now toggles: it reads ■ 停止試聽 while playing and clicking it again stops; the label resets on natural end, on the main stop button, and moves when switching to another candidate's audition. No console errors.
