@@ -119,3 +119,8 @@ Not re-verified on a physical iPhone. Audio requires a user tap to start; the pa
 
 - A 母題 row above the voices edits the shared source melody with the same click model and pitch selector; verified removing/adding motif notes immediately rebuilds all canon voices in sync (note counts follow the motif) while the staggered-entry dimming skips the motif row.
 - Micro-variation now rejects revive/move targets covered by another note's sustain and clips revived/moved lengths to the free space; a 9-second 50%-probability mutation fuzz at 180 BPM produced zero orphan bar fragments (previously overlapping notes drew broken slivers).
+
+2026-10-18 (explicit note length + motif melody editing): Chromium via local HTTP server.
+
+- The adjacent-cell auto-extend made separate adjacent notes impossible; empty-cell clicks now place an independent note using the 輸入音高 and new 音長 selectors (sixteenth/eighth/dotted-eighth/quarter, clipped to free space). Verified two adjacent solos and a quarter placed mid-row.
+- Motif bars display note names; clicking a bar start repaints it to the selected pitch (rhythm kept, canon rebuilds — verified C4→D5 with class unchanged) and deletes only when the pitch matches. The same repaint-or-delete rule applies to voice rows, preserving each voice's octave. No console errors.
