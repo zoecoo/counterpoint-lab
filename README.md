@@ -1,13 +1,13 @@
 # Counterpoint Lab
 
-無建置步驟的靜態音樂實驗室。直接開啟 index.html，或透過 GitHub Pages 使用。
+無建置步驟的靜態音樂實驗室，全部功能在單一 `index.html` 內。直接開啟檔案，或透過 GitHub Pages 使用。
 
-選擇主音、調式、BPM、起始聲部數與固定時間位移，再按「重新生成」。參數中的 BPM、力度與累積開關即時生效，其餘在重新生成時套用。矩陣每格為十六分音符；點擊可切換休止與主音。每輪增加兩格，八輪後完整循環。
+Steve Reich 啟發的生成式對位：選擇主音與十一種調式（五聲、教會調式、和聲／旋律小調），調整 BPM、聲部數（2–8）、固定聲部位移與累積速度。「生成新旋律」建立新的節奏素材；更換主音或調式時立即重新映射音高、保留節奏。勾選「逐步加入音符」時，每經過設定的循環數增加一音，完成後重新開始。
 
-Resultant Pattern Composer 從未靜音的聲部抽取高音、低音、最近音高與輪替線條，去除重複後依旋律連貫、重音與覆蓋度排序。分數是啟發式，不是確定的聽覺預測。手動試聽或自動選取後可繼續衍生，最多 16 聲部。沒有聲音時不產生候選。
+聲部矩陣以色塊顯示各聲部的發音位置，播放時標示目前拍點。此模型是固定聲部位移的卡農，並非連續的 Phasing。
 
-播放必須由使用者點擊啟動 AudioContext，並等待 resume 完成；切換到背景自動停止。iPhone Safari 請保持頁面在前景並確認音量。桌面 WebKit 測試不能取代實體 iPhone 驗證。
+頁面頂端內嵌一段預先生成的示範 MP3（使用原生 `<audio>` 播放器），用來在不依賴 Web Audio 的情況下先確認裝置可出聲；互動播放需由使用者點擊啟動 AudioContext。
 
-MIDI 為 Standard MIDI File format 1、480 PPQ，包含速度軌與各未靜音聲部。累積模式輸出八輪，否則輸出一輪；力度控制同步套用於音訊與 MIDI。
+MIDI 匯出為 Standard MIDI File format 1、480 PPQ，含速度軌與各聲部軌，依目前的累積設定輸出完整建構過程。
 
 GitHub Actions workflow 將 main 部署至 GitHub Pages，repository Pages source 應設定為 GitHub Actions。
