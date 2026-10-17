@@ -57,3 +57,7 @@ Not re-verified on a physical iPhone. Audio requires a user tap to start; the pa
 - Playback rescheduled on the AudioContext clock with 120ms lookahead; beat highlight and phase re-engraves fire at the scheduled audio time. Measured step intervals 134–137ms against a 134ms target at 112 BPM (was drifting with setTimeout pacing).
 - Uniform cell interaction verified: clicking an attack or sustain cell silences it (mid-bar click truncates), clicking the cell right after a bar re-extends it (cap 4), other empty cells create a note; hidden notes reveal on first click in build mode.
 - Notes render as continuous bars (rounded ends, gap-filling connectors at both grid gaps); computed styles verified. No console errors.
+
+2026-10-18 (stacked score voice names): Chromium via local HTTP server.
+
+- Score voice names now render on two lines (name, then range in 9.5px gray) via a post-render tspan, so abcjs reserves margin for the short name only (~37px vs the previous full-width string). Muted marker moves to the range line and clears on unmute. Verified visually via SVG→PNG capture; no console errors.
