@@ -85,3 +85,7 @@ Not re-verified on a physical iPhone. Audio requires a user tap to start; the pa
 
 - Resultant analysis rewritten around auditory stream segregation: three streams anchored at the 85th/50th/15th pitch percentiles accept only notes within ±6 semitones of a slowly-moving focus (rests where the band is empty), plus an accent line from multi-voice simultaneous attacks. Verified candidate spans of 7–9 semitones (previously extreme lines spanned several octaves); scoring now weighs interval smoothness, register compactness, and density.
 - 起始聲部數 slider max raised to 16; 16 canon voices render in the matrix and play within the existing caps. No console errors.
+
+2026-10-18 (conventional ties): Chromium via local HTTP server.
+
+- Notes crossing a beat boundary are now split at the boundary and tied (ABC "-"), per engraving convention; previously each note was emitted as a single duration so ties never appeared (lengths cap at a quarter and never cross the barline). Verified a len-2 note starting at step 3 renders tied, and generated textures show ties throughout; visual check via SVG→PNG. No console errors.
