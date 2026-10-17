@@ -97,3 +97,8 @@ Not re-verified on a physical iPhone. Audio requires a user tap to start; the pa
 2026-10-18 (audition toggle): Chromium via local HTTP server.
 
 - The candidate audition button now toggles: it reads ■ 停止試聽 while playing and clicking it again stops; the label resets on natural end, on the main stop button, and moves when switching to another candidate's audition. No console errors.
+
+2026-10-18 (Reich-style variation + audition button isolation): Chromium via local HTTP server.
+
+- 變化 panel with a master 啟用 checkbox (default off = strict canon; verified all voices identical when off and stable through playback). When on: complementary subsets at generation (verified differing per-voice note counts with union coverage of the motif), per-bar micro-variation (verified cell changes during playback with live matrix/score refresh), and every-N-bars subset reconfiguration (verified with N=2).
+- During audition the main play button no longer flips to ■ 停止 (the audition card has its own toggle); clicking the main play button mid-audition switches straight into full playback and resets the audition button. No console errors.
