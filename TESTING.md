@@ -43,3 +43,10 @@ Not re-verified on a physical iPhone. Audio requires a user tap to start; the pa
 - Matrix DOM is now rebuilt only on structural changes; cell clicks, beat highlights, and build-phase reveals update classes on cached elements (verified the clicked element survives, handler returns in <1ms). Score re-engraving is debounced 250ms off the click path. touch-action:manipulation and user-select:none added for mobile taps.
 - Score now follows the build phase: 10 notes rendered at 建構階段 2 vs 40 with 逐步加入 off, and it grew from 11 to 16 notes during playback as the phase advanced (re-engraved once per phase change, scheduled off the audio loop).
 - Mute label toggles, voice removal, candidate analysis, and staff count after removal all verified; no console errors.
+
+2026-10-17 (range labels, unified voice names, in-place mute): Chromium via local HTTP server.
+
+- Matrix voice labels show the voice's range on a second line (e.g. Voice 1 / E3–A4), recomputed on cell edits and root/mode changes.
+- Score voice names show the same name + range text, styled via CSS to system-ui 11px gray matching the matrix labels.
+- Mute during playback verified: the button toggles in place (no DOM rebuild), the row dims, audio filtering applies per step, and playback continues.
+- No console errors.
